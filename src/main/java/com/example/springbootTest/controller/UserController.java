@@ -29,12 +29,30 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController public class UserController {
 
-	@JsonView(User.sonView.class) @RequestMapping("/JsonViewTest") public User getUserWithPassword() {
+	/**
+	 * getUserWithName
+	 *
+	 * @param
+	 * @return User
+	 * @description Without @JsonView
+	 * @date 9/30/2022 3:19 PM
+	 */
+	@RequestMapping("/getAllFromUser")
+	public User getAllFromUser() {
 		User user = new User(1, "zhou", "123");
 		return user;
 	}
 
-	@JsonView(User.View.class) @RequestMapping("/JsonViewTest2") public User getUserWithoutPassword() {
+	@JsonView(User.sonView.class)
+	@RequestMapping("/getUser_noPassword")
+	public User getUser_noPassword() {
+		User user = new User(1, "zhou", "123");
+		return user;
+	}
+
+	@JsonView(User.View.class)
+	@RequestMapping("/getUser_noPassAndName")
+	public User getUser_noPassAndName() {
 		User user = new User(1, "zhou", "123");
 		return user;
 	}

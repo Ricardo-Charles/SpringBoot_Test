@@ -39,12 +39,11 @@ public class User {
 	@Setter
 	private Integer userID;
 
-	@JsonView(User.View.class)
+	@JsonView(User.sonView.class)
 	@Getter
 	@Setter
 	private String userName;
 
-	@JsonView(User.sonView.class)
 	@Getter
 	@Setter
 	private String password;
